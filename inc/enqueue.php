@@ -118,6 +118,64 @@ function rimal_luxury_theme_enqueue_assets() {
         'all'
     );
 
+    if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) ) {
+        wp_enqueue_style(
+            'rimal-luxury-theme-shop',
+            RIMAL_LUXURY_THEME_URI . '/assets/css/shop.css',
+            array( 'rimal-luxury-theme-components' ),
+            RIMAL_LUXURY_THEME_VERSION,
+            'all'
+        );
+
+        if ( is_product() ) {
+            wp_enqueue_style(
+                'rimal-luxury-theme-product',
+                RIMAL_LUXURY_THEME_URI . '/assets/css/product.css',
+                array( 'rimal-luxury-theme-shop' ),
+                RIMAL_LUXURY_THEME_VERSION,
+                'all'
+            );
+        }
+
+        if ( is_cart() ) {
+            wp_enqueue_style(
+                'rimal-luxury-theme-cart',
+                RIMAL_LUXURY_THEME_URI . '/assets/css/cart.css',
+                array( 'rimal-luxury-theme-shop' ),
+                RIMAL_LUXURY_THEME_VERSION,
+                'all'
+            );
+        }
+
+        if ( is_checkout() ) {
+            wp_enqueue_style(
+                'rimal-luxury-theme-checkout',
+                RIMAL_LUXURY_THEME_URI . '/assets/css/checkout.css',
+                array( 'rimal-luxury-theme-shop' ),
+                RIMAL_LUXURY_THEME_VERSION,
+                'all'
+            );
+        }
+
+        if ( is_account_page() ) {
+            wp_enqueue_style(
+                'rimal-luxury-theme-account',
+                RIMAL_LUXURY_THEME_URI . '/assets/css/account.css',
+                array( 'rimal-luxury-theme-shop' ),
+                RIMAL_LUXURY_THEME_VERSION,
+                'all'
+            );
+        }
+
+        wp_enqueue_script(
+            'rimal-luxury-theme-shop',
+            RIMAL_LUXURY_THEME_URI . '/assets/js/shop.js',
+            array( 'rimal-luxury-theme-components', 'wc-add-to-cart' ),
+            RIMAL_LUXURY_THEME_VERSION,
+            true
+        );
+    }
+
     wp_enqueue_script(
         'rimal-luxury-theme-script',
         RIMAL_LUXURY_THEME_URI . '/assets/js/theme.js',

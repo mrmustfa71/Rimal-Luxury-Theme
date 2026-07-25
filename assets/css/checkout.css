@@ -1,0 +1,53 @@
+.woocommerce-checkout .woocommerce-billing-fields,
+.woocommerce-checkout .woocommerce-shipping-fields,
+.woocommerce-checkout .woocommerce-additional-fields {
+    margin-bottom: var( --space-3xl );
+}
+
+.woocommerce form.checkout .form-row {
+    display: grid;
+    gap: var( --space-sm );
+}
+
+.woocommerce form.checkout .form-row-wide {
+    width: 100%;
+}
+
+.woocommerce form.checkout .form-row-first,
+.woocommerce form.checkout .form-row-last {
+    float: none;
+    width: 100%;
+}
+
+.woocommerce-checkout-payment {
+    margin-top: var( --space-3xl );
+}
+
+.woocommerce-checkout-review-order {
+    background-color: var( --color-white );
+    border: 1px solid var( --color-gray-200 );
+    border-radius: var( --radius-lg );
+    padding: var( --space-lg );
+}
+
+.woocommerce-checkout-review-order-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+    padding: var( --space-sm );
+    border-bottom: 1px solid var( --color-gray-200 );
+}
+
+.woocommerce-checkout-review-order-table tfoot tr th {
+    font-weight: var( --font-weight-bold );
+}
+
+@media (max-width: 768px) {
+    .woocommerce form.checkout .form-row-first,
+    .woocommerce form.checkout .form-row-last {
+        width: 100%;
+    }
+}
