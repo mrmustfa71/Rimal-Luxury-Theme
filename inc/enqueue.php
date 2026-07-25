@@ -55,9 +55,17 @@ function rimal_luxury_theme_enqueue_assets() {
     );
 
     wp_enqueue_style(
+        'rimal-luxury-theme-components',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/components.css',
+        array( 'rimal-luxury-theme-header' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
         'rimal-luxury-theme-footer',
         RIMAL_LUXURY_THEME_URI . '/assets/css/footer.css',
-        array( 'rimal-luxury-theme-header' ),
+        array( 'rimal-luxury-theme-components' ),
         RIMAL_LUXURY_THEME_VERSION,
         'all'
     );
@@ -121,6 +129,14 @@ function rimal_luxury_theme_enqueue_assets() {
     wp_enqueue_script(
         'rimal-luxury-theme-header',
         RIMAL_LUXURY_THEME_URI . '/assets/js/header.js',
+        array(),
+        RIMAL_LUXURY_THEME_VERSION,
+        true
+    );
+
+    wp_enqueue_script(
+        'rimal-luxury-theme-components',
+        RIMAL_LUXURY_THEME_URI . '/assets/js/components.js',
         array(),
         RIMAL_LUXURY_THEME_VERSION,
         true

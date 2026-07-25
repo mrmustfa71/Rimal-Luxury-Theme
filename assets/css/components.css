@@ -1,0 +1,375 @@
+:root {
+    --component-radius: var( --radius-md );
+    --component-shadow: var( --shadow-sm );
+}
+
+.component-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: var( --component-radius );
+    background-color: var( --color-primary );
+    color: var( --color-black );
+    font-weight: var( --font-weight-semibold );
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform var( --transition-base ), background-color var( --transition-base ), box-shadow var( --transition-base );
+}
+
+.component-button:hover,
+.component-button:focus-visible {
+    background-color: var( --color-primary-hover );
+    transform: translateY( -1px );
+    outline: none;
+}
+
+.component-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: var( --radius-sm );
+    background-color: var( --color-gray-200 );
+    color: var( --color-black );
+    font-size: var( --font-size-xs );
+    font-weight: var( --font-weight-semibold );
+}
+
+.component-section-title {
+    margin-bottom: var( --space-lg );
+}
+
+.component-section-title__eyebrow {
+    display: block;
+    color: var( --color-primary );
+    letter-spacing: 0.12em;
+    font-size: var( --font-size-xs );
+    text-transform: uppercase;
+    margin-bottom: var( --space-xs );
+}
+
+.component-section-title__heading {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    line-height: 1.05;
+}
+
+.component-section-title__description {
+    margin-top: var( --space-sm );
+    color: var( --color-gray-900 );
+    font-size: var( --font-size-sm );
+}
+
+.component-card {
+    background-color: var( --color-white );
+    border-radius: var( --component-radius );
+    box-shadow: var( --component-shadow );
+    overflow: hidden;
+    display: grid;
+    gap: var( --space-md );
+}
+
+.component-card__media {
+    position: relative;
+    overflow: hidden;
+}
+
+.component-card__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.component-card__body {
+    padding: var( --space-lg );
+}
+
+.component-card__title,
+.component-category-card__title,
+.component-feature-box__title {
+    margin: 0 0 var( --space-xs );
+    font-size: var( --font-size-lg );
+    font-weight: var( --font-weight-bold );
+}
+
+.component-card__meta,
+.component-feature-box__subtitle,
+.component-newsletter-box__description,
+.component-breadcrumb {
+    color: var( --color-gray-500 );
+    font-size: var( --font-size-sm );
+}
+
+.component-category-card {
+    background-color: var( --color-white );
+    border-radius: var( --component-radius );
+    overflow: hidden;
+    box-shadow: var( --component-shadow );
+    display: grid;
+}
+
+.component-category-card__media {
+    position: relative;
+}
+
+.component-category-card__content {
+    padding: var( --space-lg );
+}
+
+.component-feature-box {
+    background-color: var( --color-white );
+    border-radius: var( --component-radius );
+    box-shadow: var( --component-shadow );
+    padding: var( --space-lg );
+    display: grid;
+    gap: var( --space-sm );
+}
+
+.component-newsletter-box {
+    background-color: var( --color-gray-100 );
+    border-radius: var( --component-radius );
+    padding: var( --space-xl );
+    display: grid;
+    gap: var( --space-md );
+}
+
+.component-newsletter-box__input {
+    width: 100%;
+    min-height: 3rem;
+    padding: var( --space-md );
+    border: 1px solid var( --color-gray-200 );
+    border-radius: var( --radius-sm );
+    font-size: var( --font-size-sm );
+}
+
+.component-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var( --space-xs );
+    font-size: var( --font-size-sm );
+}
+
+.component-breadcrumb a {
+    color: var( --color-primary );
+    text-decoration: none;
+}
+
+.component-breadcrumb__separator {
+    color: var( --color-gray-500 );
+}
+
+.component-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var( --space-xs );
+    justify-content: center;
+}
+
+.component-pagination__link,
+.component-pagination__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0 var( --space-sm );
+    border-radius: var( --radius-sm );
+    border: 1px solid var( --color-gray-200 );
+    color: var( --color-black );
+    background-color: var( --color-white );
+    text-decoration: none;
+}
+
+.component-pagination__link:hover,
+.component-pagination__button:hover,
+.component-pagination__link:focus-visible,
+.component-pagination__button:focus-visible {
+    background-color: var( --color-gray-100 );
+    outline: none;
+}
+
+.component-empty-state {
+    text-align: center;
+    padding: var( --space-2xl );
+}
+
+.component-empty-state__title {
+    margin: 0 0 var( --space-sm );
+    font-size: var( --font-size-2xl );
+}
+
+.component-empty-state__text {
+    margin: 0 0 var( --space-md );
+    color: var( --color-gray-500 );
+}
+
+.component-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 0.35rem solid var( --color-gray-200 );
+    border-top-color: var( --color-primary );
+    border-radius: 50%;
+    animation: spin var( --animation-duration-slow ) linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate( 360deg );
+    }
+}
+
+.component-modal,
+.component-drawer {
+    position: fixed;
+    inset: 0;
+    background: var( --color-overlay );
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var( --transition-base );
+}
+
+.component-modal.is-open,
+.component-drawer.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.component-modal__panel,
+.component-drawer__panel {
+    width: min(95%, 40rem);
+    background-color: var( --color-white );
+    color: var( --color-black );
+    border-radius: var( --component-radius );
+    box-shadow: var( --shadow-lg );
+    padding: var( --space-xl );
+    position: relative;
+}
+
+.component-drawer {
+    display: grid;
+    place-items: end center;
+}
+
+.component-drawer__panel {
+    width: min(95%, 24rem);
+    height: 100vh;
+    padding: var( --space-lg );
+    overflow-y: auto;
+}
+
+.component-toast {
+    position: fixed;
+    bottom: var( --space-lg );
+    right: var( --space-lg );
+    max-width: 22rem;
+    background-color: var( --color-black );
+    color: var( --color-white );
+    border-radius: var( --radius-md );
+    box-shadow: var( --shadow-md );
+    padding: var( --space-md );
+    display: grid;
+    gap: var( --space-xs );
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    transition: opacity var( --transition-base ), transform var( --transition-base );
+}
+
+.component-toast.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.component-quantity-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: var( --space-xs );
+    border: 1px solid var( --color-gray-200 );
+    border-radius: var( --radius-sm );
+    overflow: hidden;
+}
+
+.component-quantity-selector button,
+.component-quantity-selector input {
+    border: none;
+    background: transparent;
+    font-size: var( --font-size-md );
+}
+
+.component-quantity-selector input {
+    width: 3rem;
+    text-align: center;
+}
+
+.component-price-block {
+    display: grid;
+    gap: var( --space-xs );
+}
+
+.component-price-block__price {
+    font-size: var( --font-size-2xl );
+    font-weight: var( --font-weight-bold );
+}
+
+.component-price-block__sale {
+    color: var( --color-primary );
+}
+
+.component-rating-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.component-rating-stars svg {
+    width: 1rem;
+    height: 1rem;
+    fill: var( --color-primary );
+}
+
+.component-product-label {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.75rem;
+    border-radius: var( --radius-sm );
+    background-color: var( --color-primary );
+    color: var( --color-black );
+    font-size: var( --font-size-xs );
+    font-weight: var( --font-weight-semibold );
+}
+
+.component-social-icons {
+    display: inline-flex;
+    align-items: center;
+    gap: var( --space-sm );
+}
+
+.component-social-icons a {
+    color: var( --color-black );
+    text-decoration: none;
+    font-size: var( --font-size-lg );
+}
+
+.component-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var( --color-gray-200 );
+    margin: var( --space-2xl ) 0;
+}
+
+@media (max-width: 768px) {
+    .component-section-title__heading {
+        font-size: var( --font-size-2xl );
+    }
+
+    .component-modal__panel,
+    .component-toast {
+        width: min(95%, 100%);
+    }
+}
