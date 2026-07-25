@@ -7,11 +7,8 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<main id="primary" class="site-main container woocommerce-account">
-    <?php wc_print_notices(); ?>
-    <?php do_action( 'woocommerce_account_navigation' ); ?>
+<?php wc_print_notices(); ?>
 
-    <section class="account-dashboard">
-        <?php do_action( 'woocommerce_account_dashboard' ); ?>
-    </section>
-</main>
+<section class="account-dashboard">
+    <?php do_action( 'woocommerce_account_dashboard' ); ?>
+</section>
