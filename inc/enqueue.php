@@ -15,9 +15,97 @@ function rimal_luxury_theme_enqueue_assets() {
     );
 
     wp_enqueue_style(
-        'rimal-luxury-theme-main',
-        RIMAL_LUXURY_THEME_URI . '/assets/css/theme.css',
+        'rimal-luxury-theme-variables',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/variables.css',
         array( 'rimal-luxury-theme-style' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-base',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/base.css',
+        array( 'rimal-luxury-theme-variables' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-typography',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/typography.css',
+        array( 'rimal-luxury-theme-base' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-layout',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/layout.css',
+        array( 'rimal-luxury-theme-typography' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-header',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/header.css',
+        array( 'rimal-luxury-theme-layout' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-footer',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/footer.css',
+        array( 'rimal-luxury-theme-header' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-buttons',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/buttons.css',
+        array( 'rimal-luxury-theme-footer' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-forms',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/forms.css',
+        array( 'rimal-luxury-theme-buttons' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-cards',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/cards.css',
+        array( 'rimal-luxury-theme-forms' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-utilities',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/utilities.css',
+        array( 'rimal-luxury-theme-cards' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-animations',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/animations.css',
+        array( 'rimal-luxury-theme-utilities' ),
+        RIMAL_LUXURY_THEME_VERSION,
+        'all'
+    );
+
+    wp_enqueue_style(
+        'rimal-luxury-theme-responsive',
+        RIMAL_LUXURY_THEME_URI . '/assets/css/responsive.css',
+        array( 'rimal-luxury-theme-animations' ),
         RIMAL_LUXURY_THEME_VERSION,
         'all'
     );

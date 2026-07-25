@@ -1,0 +1,27 @@
+@media (max-width: 1024px) {
+    .site-content {
+        padding-left: var( --container-padding );
+        padding-right: var( --container-padding );
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header,
+    .site-footer {
+        padding: var( --space-md ) var( --container-padding );
+    }
+
+    .menu--primary {
+        gap: var( --space-sm );
+    }
+}
+
+@media (max-width: 640px) {
+    .front-page-hero {
+        padding: var( --space-2xl ) 0;
+    }
+
+    .site-title {
+        font-size: var( --font-size-lg );
+    }
+}

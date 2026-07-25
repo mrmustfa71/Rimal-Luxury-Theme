@@ -1,0 +1,23 @@
+.fade-in {
+    animation: fadeIn var( --animation-duration-base ) var( --animation-ease ) both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-0.5rem);
+    }
+}

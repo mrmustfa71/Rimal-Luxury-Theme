@@ -1,0 +1,63 @@
+:root {
+    /* Color palette */
+    --color-primary: #C9A227;
+    --color-black: #111111;
+    --color-white: #FFFFFF;
+    --color-gray-100: #F5F5F5;
+    --color-gray-200: #E5E2DD;
+    --color-gray-500: #8A8780;
+    --color-gray-900: #1C1A18;
+
+    /* Spacing system */
+    --space-xxs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+
+    /* Container system */
+    --container-max-width: 1200px;
+    --container-padding: 1.25rem;
+
+    /* Border radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.25rem;
+
+    /* Shadow system */
+    --shadow-sm: 0 1px 4px rgba(17, 17, 17, 0.08);
+    --shadow-md: 0 12px 24px rgba(17, 17, 17, 0.12);
+    --shadow-lg: 0 24px 48px rgba(17, 17, 17, 0.16);
+
+    /* Typography scale */
+    --font-family-base: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-family-heading: "Cormorant Garamond", Georgia, serif;
+    --font-size-base: 1rem;
+    --line-height-base: 1.6;
+    --font-weight-regular: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --font-size-xxs: 0.75rem;
+    --font-size-xs: 0.875rem;
+    --font-size-sm: 0.975rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.75rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
+
+    /* Transition system */
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 220ms ease-in-out;
+    --transition-smooth: 320ms ease-in-out;
+
+    /* Animation variables */
+    --animation-duration-base: 350ms;
+    --animation-duration-slow: 600ms;
+    --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}

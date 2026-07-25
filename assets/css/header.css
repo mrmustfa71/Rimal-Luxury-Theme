@@ -1,0 +1,39 @@
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: var( --space-md );
+}
+
+.site-title-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-title {
+    color: var( --color-white );
+    text-decoration: none;
+    font-weight: var( --font-weight-bold );
+    font-size: var( --font-size-xl );
+}
+
+.site-description {
+    margin: var( --space-xxs ) 0 0;
+    color: var( --color-gray-200 );
+    font-size: var( --font-size-sm );
+}
+
+.primary-navigation {
+    margin-top: var( --space-md );
+}
+
+.menu--primary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var( --space-md );
+}
+
+.menu--primary a {
+    color: var( --color-white );
+    text-decoration: none;
+    font-weight: var( --font-weight-semibold );
+}
