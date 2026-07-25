@@ -117,5 +117,13 @@ function rimal_luxury_theme_enqueue_assets() {
         RIMAL_LUXURY_THEME_VERSION,
         true
     );
+
+    wp_enqueue_script(
+        'rimal-luxury-theme-header',
+        RIMAL_LUXURY_THEME_URI . '/assets/js/header.js',
+        array(),
+        RIMAL_LUXURY_THEME_VERSION,
+        true
+    );
 }
 add_action( 'wp_enqueue_scripts', 'rimal_luxury_theme_enqueue_assets' );
