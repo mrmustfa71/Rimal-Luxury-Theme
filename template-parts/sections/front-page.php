@@ -7,68 +7,95 @@
 
 defined( 'ABSPATH' ) || exit;
 
+$shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
+$cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' );
+
 if ( class_exists( 'WooCommerce' ) ) {
-    $featured_categories = get_terms(
-        'product_cat',
-        array(
-            'orderby'    => 'count',
-            'order'      => 'DESC',
-            'number'     => 4,
-            'hide_empty' => true,
-        )
-    );
+    $featured_categories = get_transient( 'rimal_luxury_homepage_featured_categories' );
+    if ( false === $featured_categories ) {
+        $featured_categories = get_terms(
+            'product_cat',
+            array(
+                'orderby'    => 'count',
+                'order'      => 'DESC',
+                'number'     => 4,
+                'hide_empty' => true,
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_featured_categories', $featured_categories, 12 * HOUR_IN_SECONDS );
+    }
 
-    $new_arrivals = wc_get_products(
-        array(
-            'status' => 'publish',
-            'limit'  => 8,
-            'orderby' => 'date',
-            'order'   => 'DESC',
-        )
-    );
+    $new_arrivals = get_transient( 'rimal_luxury_homepage_new_arrivals' );
+    if ( false === $new_arrivals ) {
+        $new_arrivals = wc_get_products(
+            array(
+                'status' => 'publish',
+                'limit'  => 8,
+                'orderby' => 'date',
+                'order'   => 'DESC',
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_new_arrivals', $new_arrivals, 12 * HOUR_IN_SECONDS );
+    }
 
-    $best_sellers = wc_get_products(
-        array(
-            'status'    => 'publish',
-            'limit'     => 8,
-            'orderby'   => 'meta_value_num',
-            'meta_key'  => 'total_sales',
-            'order'     => 'DESC',
-        )
-    );
+    $best_sellers = get_transient( 'rimal_luxury_homepage_best_sellers' );
+    if ( false === $best_sellers ) {
+        $best_sellers = wc_get_products(
+            array(
+                'status'    => 'publish',
+                'limit'     => 8,
+                'orderby'   => 'meta_value_num',
+                'meta_key'  => 'total_sales',
+                'order'     => 'DESC',
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_best_sellers', $best_sellers, 12 * HOUR_IN_SECONDS );
+    }
 
-    $featured_collection = wc_get_products(
-        array(
-            'status'   => 'publish',
-            'limit'    => 6,
-            'featured' => true,
-        )
-    );
+    $featured_collection = get_transient( 'rimal_luxury_homepage_featured_collection' );
+    if ( false === $featured_collection ) {
+        $featured_collection = wc_get_products(
+            array(
+                'status'   => 'publish',
+                'limit'    => 6,
+                'featured' => true,
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_featured_collection', $featured_collection, 12 * HOUR_IN_SECONDS );
+    }
 
-    $testimonial_comments = get_comments(
-        array(
-            'post_type'      => 'product',
-            'status'         => 'approve',
-            'number'         => 3,
-            'orderby'        => 'comment_date_gmt',
-            'order'          => 'DESC',
-            'fields'         => 'all',
-            'date_query'     => array(
-                array(
-                    'after' => '1 year ago',
+    $testimonial_comments = get_transient( 'rimal_luxury_homepage_testimonial_comments' );
+    if ( false === $testimonial_comments ) {
+        $testimonial_comments = get_comments(
+            array(
+                'post_type'      => 'product',
+                'status'         => 'approve',
+                'number'         => 3,
+                'orderby'        => 'comment_date_gmt',
+                'order'          => 'DESC',
+                'fields'         => 'all',
+                'date_query'     => array(
+                    array(
+                        'after' => '1 year ago',
+                    ),
                 ),
-            ),
-        )
-    );
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_testimonial_comments', $testimonial_comments, 12 * HOUR_IN_SECONDS );
+    }
 
-    $instagram_products = wc_get_products(
-        array(
-            'status' => 'publish',
-            'limit'  => 6,
-            'orderby' => 'date',
-            'order'   => 'DESC',
-        )
-    );
+    $instagram_products = get_transient( 'rimal_luxury_homepage_instagram_products' );
+    if ( false === $instagram_products ) {
+        $instagram_products = wc_get_products(
+            array(
+                'status' => 'publish',
+                'limit'  => 6,
+                'orderby' => 'date',
+                'order'   => 'DESC',
+            )
+        );
+        set_transient( 'rimal_luxury_homepage_instagram_products', $instagram_products, 12 * HOUR_IN_SECONDS );
+    }
 } else {
     $featured_categories   = array();
     $new_arrivals          = array();
@@ -85,7 +112,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         <p class="announcement-hero__text">
             <?php esc_html_e( 'Free worldwide shipping on orders over $250. Luxury essentials delivered with care.', 'rimal-luxury-theme' ); ?>
         </p>
-        <a class="announcement-hero__link" href="<?php echo esc_url( wc_get_cart_url() ); ?>">
+        <a class="announcement-hero__link" href="<?php echo esc_url( $cart_url ); ?>">
             <?php esc_html_e( 'Shop now', 'rimal-luxury-theme' ); ?>
         </a>
     </div>
@@ -97,7 +124,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
             <span class="eyebrow-text"><?php esc_html_e( 'New Season Edit', 'rimal-luxury-theme' ); ?></span>
             <h1 class="hero-banner__title"><?php esc_html_e( 'Crafted for elegant silhouettes and timeless luxury.', 'rimal-luxury-theme' ); ?></h1>
             <p class="hero-banner__copy"><?php esc_html_e( 'Discover premium womenswear with sculptural details, refined fabrics, and effortless glamour.', 'rimal-luxury-theme' ); ?></p>
-            <?php get_template_part( 'template-parts/components/button', null, array( 'label' => __( 'Explore the collection', 'rimal-luxury-theme' ), 'url' => wc_get_page_permalink( 'shop' ), 'style' => 'primary' ) ); ?>
+            <?php get_template_part( 'template-parts/components/button', null, array( 'label' => __( 'Explore the collection', 'rimal-luxury-theme' ), 'url' => $shop_url, 'style' => 'primary' ) ); ?>
         </div>
         <?php if ( $hero_product ) : ?>
             <figure class="hero-banner__visual" aria-hidden="true">
@@ -294,6 +321,6 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
             <h2 id="footer-cta-heading"><?php esc_html_e( 'Elevate your wardrobe with luxurious essentials', 'rimal-luxury-theme' ); ?></h2>
             <p><?php esc_html_e( 'Discover curated collections designed to make every day feel exceptional.', 'rimal-luxury-theme' ); ?></p>
         </div>
-        <?php get_template_part( 'template-parts/components/button', null, array( 'label' => __( 'View the collection', 'rimal-luxury-theme' ), 'url' => wc_get_page_permalink( 'shop' ), 'style' => 'primary' ) ); ?>
+        <?php get_template_part( 'template-parts/components/button', null, array( 'label' => __( 'View the collection', 'rimal-luxury-theme' ), 'url' => $shop_url, 'style' => 'primary' ) ); ?>
     </div>
 </section>

@@ -16,15 +16,15 @@ $title      = $product->get_name();
 $price      = $product->get_price_html();
 $rating     = wc_get_rating_html( $product->get_average_rating() );
 $label      = $product->get_catalog_visibility();
-$image      = wp_get_attachment_image_src( $product->get_image_id(), 'medium' );
+$image_id   = $product->get_image_id();
 ?>
 <article class="component-card component-product-card">
     <div class="component-card__media">
         <a href="<?php echo esc_url( $permalink ); ?>">
-            <?php if ( ! empty( $image ) ) : ?>
-                <img src="<?php echo esc_url( $image[0] ); ?>" alt="<?php echo esc_attr( $product->get_name() ); ?>" />
+            <?php if ( $image_id ) : ?>
+                <?php echo wp_get_attachment_image( $image_id, 'medium', false, array( 'loading' => 'lazy', 'alt' => $product->get_name() ) ); ?>
             <?php else : ?>
-                <img src="<?php echo esc_url( wc_placeholder_img_src() ); ?>" alt="<?php esc_attr_e( 'Placeholder', 'rimal-luxury-theme' ); ?>" />
+                <img src="<?php echo esc_url( wc_placeholder_img_src() ); ?>" alt="<?php esc_attr_e( 'Placeholder', 'rimal-luxury-theme' ); ?>" loading="lazy" />
             <?php endif; ?>
         </a>
         <?php if ( $product->is_on_sale() ) : ?>

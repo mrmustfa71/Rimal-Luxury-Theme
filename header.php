@@ -9,6 +9,11 @@
 </head>
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
+<?php
+$wc_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
+$wc_cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' );
+$wc_account_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' );
+?>
 <div class="site-announcement-bar" role="region" aria-label="Site announcement">
     <p class="announcement-bar__text"><?php esc_html_e( 'Free shipping on fashion orders over $200. Premium delivery worldwide.', 'rimal-luxury-theme' ); ?></p>
     <a class="announcement-bar__action" href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">
@@ -40,13 +45,13 @@
                 <span class="header-action__icon" aria-hidden="true">&#128270;</span>
                 <span class="screen-reader-text"><?php esc_html_e( 'Open search', 'rimal-luxury-theme' ); ?></span>
             </button>
-            <a class="header-action" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>" aria-label="<?php esc_attr_e( 'My account', 'rimal-luxury-theme' ); ?>">
+            <a class="header-action" href="<?php echo esc_url( $wc_account_url ); ?>" aria-label="<?php esc_attr_e( 'My account', 'rimal-luxury-theme' ); ?>">
                 <span class="header-action__icon" aria-hidden="true">&#128100;</span>
             </a>
             <a class="header-action" href="<?php echo esc_url( home_url( '/wishlist/' ) ); ?>" aria-label="<?php esc_attr_e( 'Wishlist', 'rimal-luxury-theme' ); ?>">
                 <span class="header-action__icon" aria-hidden="true">&#10084;</span>
             </a>
-            <a class="header-action header-action--cart" href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>" aria-label="<?php esc_attr_e( 'View cart', 'rimal-luxury-theme' ); ?>">
+            <a class="header-action header-action--cart" href="<?php echo esc_url( $wc_cart_url ); ?>" aria-label="<?php esc_attr_e( 'View cart', 'rimal-luxury-theme' ); ?>">
                 <span class="header-action__icon" aria-hidden="true">&#128722;</span>
                 <?php if ( function_exists( 'WC' ) ) : ?>
                     <span class="header-action__badge"><?php echo esc_html( WC()->cart->get_cart_contents_count() ); ?></span>
@@ -94,7 +99,7 @@
                     <a class="header-action header-action--cart" href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>">
                         <?php esc_html_e( 'Cart', 'rimal-luxury-theme' ); ?>
                     </a>
-                    <a class="header-action" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : home_url( '/my-account/' ) ); ?>">
+                    <a class="header-action" href="<?php echo esc_url( $wc_account_url ); ?>">
                         <?php esc_html_e( 'Account', 'rimal-luxury-theme' ); ?>
                     </a>
                 </div>

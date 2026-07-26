@@ -174,6 +174,14 @@ function rimal_luxury_theme_enqueue_assets() {
             RIMAL_LUXURY_THEME_VERSION,
             true
         );
+
+        wp_enqueue_script(
+            'rimal-luxury-theme-components',
+            RIMAL_LUXURY_THEME_URI . '/assets/js/components.js',
+            array(),
+            RIMAL_LUXURY_THEME_VERSION,
+            true
+        );
     }
 
     wp_enqueue_script(
@@ -192,12 +200,6 @@ function rimal_luxury_theme_enqueue_assets() {
         true
     );
 
-    wp_enqueue_script(
-        'rimal-luxury-theme-components',
-        RIMAL_LUXURY_THEME_URI . '/assets/js/components.js',
-        array(),
-        RIMAL_LUXURY_THEME_VERSION,
-        true
-    );
+
 }
 add_action( 'wp_enqueue_scripts', 'rimal_luxury_theme_enqueue_assets' );
