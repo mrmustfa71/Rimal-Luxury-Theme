@@ -4,7 +4,7 @@ get_header();
 <main id="site-content" class="site-content">
     <header class="search-header">
         <h1 class="search-title">
-            <?php printf( esc_html__( 'Search Results for: %s', 'rimal-luxury-theme' ), '<span>' . get_search_query() . '</span>' ); ?>
+            <?php printf( esc_html__( 'Search Results for: %s', 'rimal-luxury-theme' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?>
         </h1>
     </header>
     <?php

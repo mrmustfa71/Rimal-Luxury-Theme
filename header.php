@@ -23,11 +23,11 @@
                 if ( function_exists( 'the_custom_logo' ) ) {
                     the_custom_logo();
                 } else {
-                    ?><span class="site-title-text"><?php bloginfo( 'name' ); ?></span><?php
+                    ?><span class="site-title-text"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></span><?php
                 }
                 ?>
             </a>
-            <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+            <p class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
         </div>
 
         <button class="header-toggle-menu" type="button" aria-controls="mobile-drawer" aria-expanded="false">
@@ -110,7 +110,7 @@
         </button>
         <form class="search-overlay__form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
             <label class="screen-reader-text" for="header-search-field"><?php esc_html_e( 'Search for:', 'rimal-luxury-theme' ); ?></label>
-            <input id="header-search-field" class="search-overlay__input" type="search" name="s" placeholder="<?php esc_attr_e( 'Search fashion, accessories, designers', 'rimal-luxury-theme' ); ?>" value="<?php echo get_search_query(); ?>" />
+            <input id="header-search-field" class="search-overlay__input" type="search" name="s" placeholder="<?php esc_attr_e( 'Search fashion, accessories, designers', 'rimal-luxury-theme' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" />
             <button class="button button--primary" type="submit">
                 <?php esc_html_e( 'Search', 'rimal-luxury-theme' ); ?>
             </button>
