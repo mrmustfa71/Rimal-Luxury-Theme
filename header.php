@@ -9,6 +9,7 @@
 </head>
 <body <?php body_class(); ?> >
 <?php wp_body_open(); ?>
+<a class="skip-link" href="#site-content"><?php esc_html_e( 'Skip to content', 'rimal-luxury-theme' ); ?></a>
 <?php
 $wc_shop_url = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/shop/' );
 $wc_cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' );

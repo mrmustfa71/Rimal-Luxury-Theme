@@ -16,10 +16,18 @@ add_action( 'init', 'rimal_luxury_theme_remove_emoji_support' );
 
 function rimal_luxury_theme_disable_wp_embed() {
     wp_deregister_script( 'wp-embed' );
-    add_filter( 'tiny_mce_plugins', function( $plugins ) {
-        return is_array( $plugins ) ? array_diff( $plugins, array( 'wpembed' ) ) : $plugins;
-    } );
+    add_filter( 'tiny_mce_plugins', 'rimal_luxury_theme_filter_tinymce_plugins' );
 }
 add_action( 'wp_footer', 'rimal_luxury_theme_disable_wp_embed' );
+
+/**
+ * Filter TinyMCE plugins to remove wpembed.
+ *
+ * @param array|null $plugins List of TinyMCE plugins.
+ * @return array|null Filtered list of TinyMCE plugins.
+ */
+function rimal_luxury_theme_filter_tinymce_plugins( $plugins ) {
+    return is_array( $plugins ) ? array_diff( $plugins, array( 'wpembed' ) ) : $plugins;
+}
 
 

@@ -43,7 +43,7 @@
 
 .component-section-title__eyebrow {
     display: block;
-    color: var( --color-primary );
+    color: var( --color-primary-text );
     letter-spacing: 0.12em;
     font-size: var( --font-size-xs );
     text-transform: uppercase;
@@ -152,7 +152,7 @@
 }
 
 .component-breadcrumb a {
-    color: var( --color-primary );
+    color: var( --color-primary-text );
     text-decoration: none;
 }
 
@@ -318,7 +318,7 @@
 }
 
 .component-price-block__sale {
-    color: var( --color-primary );
+    color: var( --color-primary-text );
 }
 
 .component-rating-stars {

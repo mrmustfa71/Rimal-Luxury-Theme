@@ -20,6 +20,9 @@
 
         mobileDrawer.classList.toggle( 'is-open', open );
         mobileDrawer.setAttribute( 'aria-hidden', String( ! open ) );
+        if ( menuToggle ) {
+            menuToggle.setAttribute( 'aria-expanded', String( open ) );
+        }
         body.classList.toggle( 'drawer-open', open );
 
         if ( open ) {
@@ -36,6 +39,9 @@
 
         searchOverlay.classList.toggle( 'is-open', open );
         searchOverlay.setAttribute( 'aria-hidden', String( ! open ) );
+        if ( searchToggle ) {
+            searchToggle.setAttribute( 'aria-expanded', String( open ) );
+        }
         body.classList.toggle( 'search-open', open );
 
         if ( open ) {

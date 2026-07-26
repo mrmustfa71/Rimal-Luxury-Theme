@@ -10,6 +10,31 @@
     border: 0;
 }
 
+.skip-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 9999;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var( --color-black );
+    color: var( --color-white );
+    border-radius: var( --radius-sm );
+    text-decoration: none;
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    transform: translateY(0);
+    opacity: 1;
+    outline: 3px solid rgba(201, 162, 39, 0.35);
+    outline-offset: 2px;
+}
+
 .grid {
     display: grid;
     gap: var( --space-lg );

@@ -139,6 +139,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Shop By Category', 'rimal-luxury-theme' ),
         'title'       => __( 'Curated styles for every moment', 'rimal-luxury-theme' ),
         'description' => __( 'Explore our season’s most desired categories and discover signature pieces designed to elevate your wardrobe.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'featured-categories-heading',
     ) ); ?>
 
     <div class="featured-categories__grid">
@@ -153,6 +154,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'New Arrivals', 'rimal-luxury-theme' ),
         'title'       => __( 'Fresh arrivals for your luxury edit', 'rimal-luxury-theme' ),
         'description' => __( 'Discover the latest additions to our collection, selected for refined style and modern femininity.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'new-arrivals-heading',
     ) ); ?>
 
     <div class="product-grid">
@@ -167,6 +169,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Best Sellers', 'rimal-luxury-theme' ),
         'title'       => __( 'Loved by our customers', 'rimal-luxury-theme' ),
         'description' => __( 'Shop the top-rated pieces that have become wardrobe essentials for our luxury clientele.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'best-sellers-heading',
     ) ); ?>
 
     <div class="product-grid">
@@ -197,6 +200,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Featured Collection', 'rimal-luxury-theme' ),
         'title'       => __( 'Handpicked luxury essentials', 'rimal-luxury-theme' ),
         'description' => __( 'A refined edit of curated pieces from our signature collection, perfect for creating versatile, elevated looks.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'featured-collection-heading',
     ) ); ?>
 
     <div class="product-grid product-grid--featured">
@@ -211,6 +215,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Why Shop With Us', 'rimal-luxury-theme' ),
         'title'       => __( 'Luxury service designed for you', 'rimal-luxury-theme' ),
         'description' => __( 'Enjoy thoughtful service, premium craftsmanship, and seamless luxury shopping from discovery to delivery.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'why-shop-with-us-heading',
     ) ); ?>
 
     <div class="feature-grid">
@@ -242,6 +247,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Testimonials', 'rimal-luxury-theme' ),
         'title'       => __( 'Loved by those who live in luxury', 'rimal-luxury-theme' ),
         'description' => __( 'Hear from customers who trust us for wardrobe staples and unforgettable occasion dressing.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'customer-testimonials-heading',
     ) ); ?>
 
     <div class="testimonial-grid">
@@ -267,6 +273,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Instagram', 'rimal-luxury-theme' ),
         'title'       => __( 'Shop the looks from our latest launches', 'rimal-luxury-theme' ),
         'description' => __( 'A curated gallery of product imagery designed to inspire your next luxury look.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'instagram-gallery-heading',
     ) ); ?>
 
     <div class="instagram-gallery__grid">
@@ -292,6 +299,7 @@ $hero_product = ! empty( $new_arrivals ) ? $new_arrivals[0] : null;
         'eyebrow'     => __( 'Our Values', 'rimal-luxury-theme' ),
         'title'       => __( 'A luxury experience rooted in quality', 'rimal-luxury-theme' ),
         'description' => __( 'Values that guide every design choice, product story, and customer interaction.', 'rimal-luxury-theme' ),
+        'heading_id'  => 'brand-values-heading',
     ) ); ?>
 
     <div class="brand-values__grid">
