@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 wc_print_notices();
 ?>
-<main id="primary" class="site-main container woocommerce-account">
+<main id="site-content" class="site-main container woocommerce-account">
     <?php do_action( 'woocommerce_before_my_account' ); ?>
 
     <?php do_action( 'woocommerce_account_navigation' ); ?>

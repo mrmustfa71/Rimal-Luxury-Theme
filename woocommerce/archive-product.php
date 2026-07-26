@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 ?>
-<main id="primary" class="site-main container">
+<main id="site-content" class="site-main container">
     <?php do_action( 'woocommerce_before_main_content' ); ?>
 
     <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>

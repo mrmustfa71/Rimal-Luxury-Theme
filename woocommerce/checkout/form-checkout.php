@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 
 $checkout = WC()->checkout();
 ?>
-<main id="primary" class="site-main container woocommerce-checkout">
+<main id="site-content" class="site-main container woocommerce-checkout">
     <?php wc_print_notices(); ?>
     <?php do_action( 'woocommerce_before_checkout_form', $checkout ); ?>
 

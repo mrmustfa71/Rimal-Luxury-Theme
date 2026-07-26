@@ -7,7 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
-<main id="primary" class="site-main container woocommerce-cart">
+<main id="site-content" class="site-main container woocommerce-cart">
     <?php wc_print_notices(); ?>
     <?php do_action( 'woocommerce_before_cart' ); ?>
 
@@ -15,7 +15,8 @@ defined( 'ABSPATH' ) || exit;
         <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
         <table class="shop_table shop_table_responsive cart" cellspacing="0">
-            <thead>
+            <caption class="screen-reader-text"><?php esc_html_e( 'Shopping cart contents', 'rimal-luxury-theme' ); ?></caption>
+        <thead>
                 <tr>
                     <th class="product-thumbnail"><?php esc_html_e( 'Product', 'rimal-luxury-theme' ); ?></th>
                     <th class="product-name"><?php esc_html_e( 'Description', 'rimal-luxury-theme' ); ?></th>
